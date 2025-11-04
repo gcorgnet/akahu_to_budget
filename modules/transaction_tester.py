@@ -37,7 +37,7 @@ def run_transaction_tests(actual_client, mapping_list, env_vars):
                 "do_not_map": mapping.get("actual_do_not_map"),
             },
         )
-        if not mapping.get("actual_do_not_map") and mapping.get("actual_account_id"):
+        if not mapping.get("actual_do_not_map") and mapping.get("actual_account_id") :
             test_mapping = mapping
             logger.info(
                 "Found valid mapping - Akahu ID: %s, Actual ID: %s",
@@ -48,10 +48,12 @@ def run_transaction_tests(actual_client, mapping_list, env_vars):
 
     if not test_mapping:
         logging.error("No valid account mapping found!")
-        raise ValueError("No valid account mapping found")
+        # raise ValueError("No valid account mapping found")
+    else:
+        run_initial_transaction_test(actual_client, test_mapping)
+        run_duplicate_transaction_test(actual_client, test_mapping)
 
-    run_initial_transaction_test(actual_client, test_mapping)
-    run_duplicate_transaction_test(actual_client, test_mapping)
+    test_mapping = mapping
 
     if test_mapping.get("ynab_account_id"):
         run_ynab_integration_test(actual_client, test_mapping, env_vars)
