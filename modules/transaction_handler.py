@@ -116,7 +116,7 @@ def get_all_akahu(
         start_time = last_reconciled_at_dt - timedelta(weeks=1)
         query_params["start"] = start_time.isoformat().replace("+00:00", "Z")
     else:
-        query_params["start"] = "2024-01-01T00:00:00Z"
+        query_params["start"] = "2025-05-05T00:00:00Z"
 
     next_cursor = "first time"
     while next_cursor is not None:

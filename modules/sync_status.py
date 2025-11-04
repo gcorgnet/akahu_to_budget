@@ -22,7 +22,7 @@ def generate_sync_report(mapping_list, actual_count, ynab_count):
     # Get last sync times
     actual_last_sync = max(
         (
-            m.get("actual_synced_datetime", "2024-01-01T00:00:00Z")
+            m.get("actual_synced_datetime", "2025-05-05T00:00:00Z")
             for m in mapping_list.values()
             if m.get("actual_account_id")
         ),
@@ -30,7 +30,7 @@ def generate_sync_report(mapping_list, actual_count, ynab_count):
     )
     ynab_last_sync = max(
         (
-            m.get("ynab_synced_datetime", "2024-01-01T00:00:00Z")
+            m.get("ynab_synced_datetime", "2025-05-05T00:00:00Z")
             for m in mapping_list.values()
             if m.get("ynab_account_id")
         ),

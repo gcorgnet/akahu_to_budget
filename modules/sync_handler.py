@@ -92,7 +92,7 @@ def sync_to_ynab(mapping_list, debug_mode=None):
         akahu_account_name = mapping_entry.get("akahu_name")
         account_type = mapping_entry.get("account_type", "On Budget")
         last_reconciled_at = mapping_entry.get(
-            "ynab_synced_datetime", "2024-01-01T00:00:00Z"
+            "ynab_synced_datetime", "2025-05-05T00:00:00Z"
         )
         if mapping_entry.get("ynab_do_not_map"):
             logging.debug(
@@ -210,7 +210,7 @@ def sync_to_ab(actual, mapping_list, debug_mode=None):
         akahu_account_name = mapping_entry.get("akahu_name")
         account_type = mapping_entry.get("account_type", "On Budget")
         last_reconciled_at = mapping_entry.get(
-            "actual_synced_datetime", "2024-01-01T00:00:00Z"
+            "actual_synced_datetime", "2025-05-05T00:00:00Z"
         )
 
         if mapping_entry.get("actual_do_not_map"):
